@@ -51,3 +51,18 @@ aTag[2].textContent =siteContent['nav']['nav-item-3'];
 aTag[3].textContent =siteContent['nav']['nav-item-4'];
 aTag[4].textContent =siteContent['nav']['nav-item-5'];
 aTag[5].textContent =siteContent['nav']['nav-item-6'];
+// ask instructor about forEach method for this
+
+
+// add src to log-img id or class logo
+const logoImg =document.querySelector('#logo-img');
+logoImg.setAttribute('src', siteContent['nav']['img-src']);
+console.log(logoImg);
+
+// textcontent h1tag and button
+const hOneText =document.querySelector(".cta-text h1")
+hOneText.textContent=siteContent['cta']['h1'];
+// how to add break tag inside
+
+const ctaTextButton= document.querySelector(".cta-text button")
+ctaTextButton.textContent=siteContent['cta']['button'];
