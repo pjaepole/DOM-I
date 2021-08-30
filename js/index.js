@@ -97,6 +97,10 @@ hFourSelector[1].textContent= siteContent['main-content']['about-h4'];
 pSelector[1].textContent= siteContent['main-content']['about-content'];
 
 
+// mid img  "middle-img-src": "img/mid-page-accent.jpg",
+const midImgSelector =document.querySelector('#middle-img');
+midImgSelector.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
 hFourSelector[2].textContent= siteContent['main-content']['services-h4'];
 pSelector[2].textContent= siteContent['main-content']['services-content'];
 
@@ -106,3 +110,17 @@ pSelector[3].textContent= siteContent['main-content']['product-content'];
 
 hFourSelector[4].textContent= siteContent['main-content']['vision-h4'];
 pSelector[4].textContent= siteContent['main-content']['vision-content'];
+
+
+const contactHfour =document.querySelector('.contact h4');
+contactHfour.textContent=siteContent['contact']['contact-h4']
+
+const contactP =document.querySelectorAll('.contact p');
+for(let i=1; i<contactP.length; i++){
+  const cValues= Object.values(siteContent['contact']);
+  contactP[i].textContent= cValues[i]
+};
+
+
+
+
