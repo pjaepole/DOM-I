@@ -52,17 +52,57 @@ aTag[3].textContent =siteContent['nav']['nav-item-4'];
 aTag[4].textContent =siteContent['nav']['nav-item-5'];
 aTag[5].textContent =siteContent['nav']['nav-item-6'];
 // ask instructor about forEach method for this
-
-
+console.log(Object.values(siteContent['nav']));
+const aValues= Object.values(siteContent['nav']);
+aTag.forEach(function(aTagCB,idx){
+  aTagCB.textContent=aValues[idx];
+})
+// forloop
+for(let i=0; i<aTag.length; i++){
+  aTag[i].textContent= aValues[i]
+}
 // add src to log-img id or class logo
 const logoImg =document.querySelector('#logo-img');
 logoImg.setAttribute('src', siteContent['nav']['img-src']);
 console.log(logoImg);
 
 // textcontent h1tag and button
+
+const ctaTxtSelector =document.querySelector('.cta-text')
 const hOneText =document.querySelector(".cta-text h1")
-hOneText.textContent=siteContent['cta']['h1'];
-// how to add break tag inside
+hOneText.innerHTML='DOM<br>Is<br>Awesome';
+// hOneText.textContent=siteContent['cta']['h1'];
+// how to add break tag inside example <h1>DOM<br> Is<br> Awesome</h1>
+
+
 
 const ctaTextButton= document.querySelector(".cta-text button")
 ctaTextButton.textContent=siteContent['cta']['button'];
+
+const ctaImgSelector=document.querySelector('#cta-img');
+ctaImgSelector.setAttribute('src', siteContent['cta']['img-src']);
+
+// maincontent
+// all h4 selector from main content
+const hFourSelector=document.querySelectorAll('.main-content h4');
+const pSelector=document.querySelectorAll('.main-content p');
+console.log(hFourSelector);
+
+hFourSelector[0].textContent= siteContent['main-content']['features-h4'];
+pSelector[0].textContent= siteContent['main-content']['features-content'];
+
+
+
+hFourSelector[1].textContent= siteContent['main-content']['about-h4'];
+pSelector[1].textContent= siteContent['main-content']['about-content'];
+
+
+hFourSelector[2].textContent= siteContent['main-content']['services-h4'];
+pSelector[2].textContent= siteContent['main-content']['services-content'];
+
+hFourSelector[3].textContent= siteContent['main-content']['product-h4'];
+pSelector[3].textContent= siteContent['main-content']['product-content'];
+
+
+hFourSelector[4].textContent= siteContent['main-content']['vision-h4'];
+pSelector[4].textContent= siteContent['main-content']['vision-content'];
