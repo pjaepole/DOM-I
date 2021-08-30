@@ -122,5 +122,25 @@ for(let i=1; i<contactP.length; i++){
 };
 
 
+// nav font color change
+
+for(let i=0; i<aTag.length; i++){
+  aTag[i].style.color= 'green';
+};
 
 
+// appendchild store
+const store = document.createElement('a');
+store.textContent = 'Store';
+store.href = '#';
+document.querySelector('nav').appendChild(store);
+store.style.color= 'green';
+// prepend
+const donation =document.createElement('a');
+donation.textContent ='Donation';
+donation.href ='#';
+document.querySelector('nav').prepend(donation);
+donation.style.color= 'green';
+
+// donation.remove();
+console.log(aTag);
