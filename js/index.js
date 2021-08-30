@@ -40,3 +40,107 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+// change a tag in .container textcontent
+const aTag= document.querySelectorAll('nav a');
+aTag[0].textContent =siteContent['nav']['nav-item-1'];
+console.log(aTag[0].textContent);
+aTag[1].textContent =siteContent['nav']['nav-item-2'];
+aTag[2].textContent =siteContent['nav']['nav-item-3'];
+aTag[3].textContent =siteContent['nav']['nav-item-4'];
+aTag[4].textContent =siteContent['nav']['nav-item-5'];
+aTag[5].textContent =siteContent['nav']['nav-item-6'];
+// ask instructor about forEach method for this
+console.log(Object.values(siteContent['nav']));
+const aValues= Object.values(siteContent['nav']);
+aTag.forEach(function(aTagCB,idx){
+  aTagCB.textContent=aValues[idx];
+})
+// forloop
+for(let i=0; i<aTag.length; i++){
+  aTag[i].textContent= aValues[i]
+}
+// add src to log-img id or class logo
+const logoImg =document.querySelector('#logo-img');
+logoImg.setAttribute('src', siteContent['nav']['img-src']);
+console.log(logoImg);
+
+// textcontent h1tag and button
+
+const ctaTxtSelector =document.querySelector('.cta-text')
+const hOneText =document.querySelector(".cta-text h1")
+hOneText.innerHTML='DOM<br>Is<br>Awesome';
+// hOneText.textContent=siteContent['cta']['h1'];
+// how to add break tag inside example <h1>DOM<br> Is<br> Awesome</h1>
+
+
+
+const ctaTextButton= document.querySelector(".cta-text button")
+ctaTextButton.textContent=siteContent['cta']['button'];
+
+const ctaImgSelector=document.querySelector('#cta-img');
+ctaImgSelector.setAttribute('src', siteContent['cta']['img-src']);
+
+// maincontent
+// all h4 selector from main content
+const hFourSelector=document.querySelectorAll('.main-content h4');
+const pSelector=document.querySelectorAll('.main-content p');
+console.log(hFourSelector);
+
+hFourSelector[0].textContent= siteContent['main-content']['features-h4'];
+pSelector[0].textContent= siteContent['main-content']['features-content'];
+
+
+
+hFourSelector[1].textContent= siteContent['main-content']['about-h4'];
+pSelector[1].textContent= siteContent['main-content']['about-content'];
+
+
+// mid img  "middle-img-src": "img/mid-page-accent.jpg",
+const midImgSelector =document.querySelector('#middle-img');
+midImgSelector.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+hFourSelector[2].textContent= siteContent['main-content']['services-h4'];
+pSelector[2].textContent= siteContent['main-content']['services-content'];
+
+hFourSelector[3].textContent= siteContent['main-content']['product-h4'];
+pSelector[3].textContent= siteContent['main-content']['product-content'];
+
+
+hFourSelector[4].textContent= siteContent['main-content']['vision-h4'];
+pSelector[4].textContent= siteContent['main-content']['vision-content'];
+
+
+const contactHfour =document.querySelector('.contact h4');
+contactHfour.textContent=siteContent['contact']['contact-h4']
+
+const contactP =document.querySelectorAll('.contact p');
+for(let i=1; i<contactP.length; i++){
+  const cValues= Object.values(siteContent['contact']);
+  contactP[i].textContent= cValues[i]
+};
+
+
+// nav font color change
+
+for(let i=0; i<aTag.length; i++){
+  aTag[i].style.color= 'green';
+};
+
+
+// appendchild store
+const store = document.createElement('a');
+store.textContent = 'Store';
+store.href = '#';
+document.querySelector('nav').appendChild(store);
+store.style.color= 'green';
+// prepend
+const donation =document.createElement('a');
+donation.textContent ='Donation';
+donation.href ='#';
+document.querySelector('nav').prepend(donation);
+donation.style.color= 'green';
+
+// donation.remove();
+console.log(aTag);
